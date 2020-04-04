@@ -9,6 +9,8 @@ import ToggleButton from "react-toggle-button";
 import NewOffer from "../../Layout/NewOffer";
 import NewRequest from "../../Layout/NewRequest";
 import NotLoginModal from "../../Layout/NotLoginModal";
+import TakeTask from "../../Layout/take-task/TakeTaskModal";
+
 
 //layout
 import OfferHelpList from "../../Layout/OfferHelpList";
@@ -116,13 +118,13 @@ export default function () {
     if (isConnected) setToggleOffer(true);
     else setToggleNotLogin(true);
   };
+
   if (isLoading) return <h1>Loading...</h1>;
   else
     return (
       <section className="deeds-page">
       <div className="row">
         <div>
-
           {/* modals  */}
           {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
           {toggleOffer && (
