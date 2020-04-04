@@ -29,8 +29,8 @@ export default function TaskComplete({ onClose }) {
                             alt="deed-coin" />
                             16
                     </div>
-                    <button className="btn bg-primary complete-button" onClick={() => onClose(true)}>Close</button>
                 </div>
+                <button className="btn bg-primary complete-button" onClick={() => onClose(true)}>Close</button>
             </div>
         </section>
     )

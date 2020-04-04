@@ -11,6 +11,7 @@ import NewRequest from "../../Layout/NewRequest";
 import NotLoginModal from "../../Layout/NotLoginModal";
 // import TakeTask from "../../Layout/take-task/TakeTaskModal";
 // import TaskComplete from "../../Layout/task-completed/TaskCompletedModal";
+// import AcceptRequest from "../../Layout/accept-request/AcceptRequest";
 
 
 //layout
@@ -50,8 +51,9 @@ export default function () {
           deed.acceptedRequestId === userId
         ) {
           tempMyTasks.push(deed);
-        }else if(deed.type===2){tempRequests.push(deed);
-        }else{tempOffers.push(deed)}
+        } else if (deed.type === 2) {
+          tempRequests.push(deed);
+        } else { tempOffers.push(deed) }
       });
 
       setRequests(tempRequests);
@@ -59,7 +61,7 @@ export default function () {
       setMyTasks(
         tempMyTasks
       );
-      
+
       setIsLoading(false);
     } catch (e) {
       console.log("faild to fetch deeds");
@@ -120,10 +122,8 @@ export default function () {
     else setToggleNotLogin(true);
   };
 
-  if (isLoading) return <h1>Loading...</h1>;
-  else
-    return (
-      <section className="deeds-page">
+  return (
+    <section className="deeds-page">
       <div className="row">
         <div>
           {/* modals  */}
@@ -170,7 +170,7 @@ export default function () {
               inactiveLabel="" activeLabel=""
               value={shouldShowMap}
               onToggle={value => toggleMap(!value)}
-              colors={{ active: { base: "#fd6064" } }}/>
+              colors={{ active: { base: "#fd6064" } }} />
           </div>
         </div>
       </div>
@@ -181,8 +181,8 @@ export default function () {
             <Switch>
               <Redirect exact from={path} to={`${path}/help`} />
               <Route path={`${path}/help`}>
-                <OfferHelpList offers={offers} 
-                 handleUseOfferClick={handleUseOfferClick}/>
+                <OfferHelpList offers={offers}
+                  handleUseOfferClick={handleUseOfferClick} />
               </Route>
               <Route path={`${path}/be-helped`}>
                 <RequestHelpList
