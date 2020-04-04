@@ -9,7 +9,8 @@ import ToggleButton from "react-toggle-button";
 import NewOffer from "../../Layout/NewOffer";
 import NewRequest from "../../Layout/NewRequest";
 import NotLoginModal from "../../Layout/NotLoginModal";
-import TakeTask from "../../Layout/take-task/TakeTaskModal";
+// import TakeTask from "../../Layout/take-task/TakeTaskModal";
+// import TaskComplete from "../../Layout/task-completed/TaskCompletedModal";
 
 
 //layout
